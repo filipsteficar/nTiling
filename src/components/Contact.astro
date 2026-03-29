@@ -21,10 +21,30 @@
             </div>
         </div>
         <form class="flex flex-col gap-fl-base lg:col-span-2 p-fl-base border border-neutral-200 rounded-2xl font-semibold" name="contact" action="/thank-you" method="POST" data-netlify="true">
-            <input class="px-fl-sm py-fl-xs border-2 border-neutral-200 border-dashed rounded-2xl" type="text" placeholder="Your Name" name="Your Name" required>
-            <input class="px-fl-sm py-fl-xs border-2 border-neutral-200 border-dashed rounded-2xl" type="email" name="" id="" placeholder="Your E-Mail" name="Your E-Mail" required>
-            <textarea class="px-fl-sm py-fl-xs border-2 border-neutral-200 border-dashed rounded-2xl" name="message" id="" placeholder="Your Message" required></textarea>
-            <button type="submit" class="bg-rusty-nail-950 hover:bg-rusty-nail-900 p-fl-xs rounded-2xl font-semibold text-neutral-50 text-center capitalize transition-all duration-500 ease-in-out hover:cursor-pointer">Send Message</button>
+
+            <input 
+            class="px-fl-sm py-fl-xs border-2 border-neutral-200 border-dashed rounded-2xl" 
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            required>
+
+            <input 
+            class="px-fl-sm py-fl-xs border-2 border-neutral-200 border-dashed rounded-2xl" 
+            type="email" 
+            name="email" 
+            placeholder="Your E-Mail" 
+            required>
+
+            <textarea 
+            class="px-fl-sm py-fl-xs border-2 border-neutral-200 border-dashed rounded-2xl" 
+            name="message"
+            placeholder="Your Message"
+            required></textarea>
+            <button 
+            type="submit" 
+            class="bg-rusty-nail-950 hover:bg-rusty-nail-900 p-fl-xs rounded-2xl font-semibold text-neutral-50 text-center capitalize transition-all duration-500 ease-in-out hover:cursor-pointer">
+            Send Message</button>
         </form>
     </div>
 </div>
