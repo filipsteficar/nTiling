@@ -1,0 +1,29 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import MainButton from "@/components/MainButton.astro";
+
+import NikolaHeroShot from "@/images/NikolaSteficar.webp";
+
+// Current URL
+const currentURL = Astro.url.href;
+
+// Global Data
+import { siteData } from "@/utils/global";
+---
+<Layout
+pageTitle={`${siteData.website} | Tiling & Flooring in Regina, Saskatchewan`}
+pageDescription="Installation of porcelain and ceramic tiles, hardwood or vinyl floors and much more!"
+currentURL={currentURL}
+ogImage={NikolaHeroShot.src}
+ogImageAlt="Nikola from nTiling working"
+articleAuthor={siteData.author}
+>
+    <div class="flex flex-col justify-center items-center gap-fl-base mx-auto p-fl-base min-h-screen text-center container">
+		<h1 class="capitalize">Ooops...This page can't be found!</h1>
+		<p class="max-w-2xl">Error 404</p>
+		<p class="max-w-2xl">Try refreshing or use the button below to go back to home.</p>
+		<div class="flex flex-col">
+			<MainButton buttonText="Back to home" href="/" />
+		</div>
+	</div
+</Layout>
