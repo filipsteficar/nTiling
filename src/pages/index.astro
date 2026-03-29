@@ -1,11 +1,62 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "@/layouts/Layout.astro";
+import Hero from "@/components/Hero.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import OurWork from "@/components/OurWork.astro";
+import Services from "@/components/Services.astro";
+import SocialProof from "@/components/SocialProof.astro";
+import Contact from "@/components/Contact.astro";
+
+import img1 from "@/images/our-work/OurWork1.webp";
+import img2 from "@/images/our-work/OurWork2.webp";
+import img3 from "@/images/our-work/OurWork3.webp";
+import img4 from "@/images/our-work/OurWork4.webp";
+import img5 from "@/images/our-work/OurWork5.webp";
+import img6 from "@/images/our-work/OurWork6.webp";
+import glassmorphism from "@/images/GlassFX.jpg";
+import NikolaHeroShot from "@/images/NikolaSteficar.webp";
+
+const workImages = [
+	{ src: img1, alt: 'Kitchen Backsplash'},
+	{ src: img2, alt: 'White Tiles'},
+	{ src: img3, alt: 'New Floor'},
+	{ src: img4, alt: 'White Shower'},
+	{ src: img5, alt: 'Dark Floor'},
+	{ src: img6, alt: 'White Kitchen Backsplash'}
+]
+
+// Current URL
+const currentURL = Astro.url.href;
+
+// Global Data
+import { siteData } from "@/utils/global";
 ---
-
-<Layout>
-	<Welcome />
+<Layout
+pageTitle={`${siteData.website} | Tiling & Flooring in Regina, Saskatchewan`}
+pageDescription="Installation of porcelain and ceramic tiles, hardwood or vinyl floors and much more!"
+currentURL={currentURL}
+ogImage={NikolaHeroShot.src}
+ogImageAlt="Nikola from nTiling working"
+articleAuthor={siteData.author}
+>
+	<!-- Hero -->
+	<section class="mx-auto mt-fl-base px-fl-base container">
+		<Hero />
+	</section>
+	<!-- Our Work -->
+	<section class="mx-auto mt-fl-base px-fl-base container">
+		<OurWork images={workImages} />
+	</section>
+	<!-- Service -->
+	<section class="mx-auto mt-fl-base px-fl-base container">
+		<Services />
+	</section>
+	<!-- Social Proof -->
+	<section class="relative bg-cover bg-center bg-fixed mt-fl-base" style={`background-image: url(${glassmorphism.src})`}>
+		<SocialProof />
+	</section>
+	<!-- Contact Form -->
+	<section class="mx-auto mt-fl-base mb-fl-base px-fl-base container">
+		<Contact />
+	</section>
 </Layout>

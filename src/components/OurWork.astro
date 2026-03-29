@@ -1,0 +1,51 @@
+---
+// Components
+import { Image } from 'astro:assets';
+// Props
+const { images } = Astro.props as { images: WorkImage[] };
+// Lightbox CSS
+import "glightbox/dist/css/glightbox.css";
+// Type
+type WorkImage = {
+  src: any; // we’ll refine this in a second
+  alt: string;
+};
+---
+<div id="our-work">
+    <div class="flex flex-col gap-fl-base">
+        <div>
+            <p class="text-fl-sm capitalize">Proud of</p>
+            <h2 class="text-fl-xl capitalize">Our latest work</h2>
+        </div>
+        <p class="max-w-2xl">At nTiling, we take immense pride in the exceptional work we deliver for our clients. Explore our gallery to see stunning transformations from our recent projects.</p>
+    </div>
+    <div class="gap-fl-sm columns-1 md:columns-2 lg:columns-3 mt-fl-base glightbox">
+        {images.map((img) => (
+        <a  class="block mb-fl-sm last:mb-0 break-inside-avoid glightbox"
+            href={img.src.src}
+            data-type="image"
+            data-srcset={img.src.src}
+            data-glightbox
+            data-gallery="gallery"
+        >
+        <Image
+            class="rounded-2xl hover:rounded-4xl transition-all hover:-translate-y-fl-base duration-500 ease-in-out"
+            src={img.src}
+            alt={img.alt}
+            inferSize={true}
+            loading="lazy"
+        />
+        </a>
+        ))}
+    </div>
+</div>
+
+<script>
+    import GLightbox from 'glightbox';
+    
+    const lightbox = GLightbox({
+        selector: '[data-glightbox]',
+        touchNavigation: true,
+        loop: true
+    });
+</script>

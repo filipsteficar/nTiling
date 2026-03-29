@@ -1,0 +1,29 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import MainButton from "@/components/MainButton.astro";
+
+import NikolaHeroShot from "@/images/NikolaSteficar.webp";
+
+// Current URL
+const currentURL = Astro.url.href;
+
+// Global Data
+import { siteData } from "@/utils/global";
+---
+<Layout
+pageTitle={`${siteData.website} | Thank You For Reaching Out`}
+pageDescription="Thank you for contacting us about our services. Your message has been received and we'll respond shortly to assist you."
+currentURL={currentURL}
+ogImage={NikolaHeroShot.src}
+ogImageAlt="Nikola from nTiling working"
+articleAuthor={siteData.author}
+>
+	<div class="flex flex-col justify-center items-center gap-fl-base mx-auto p-fl-base min-h-screen text-center container">
+		<h1 class="capitalize">Thank you for reaching out!</h1>
+		<p class="max-w-2xl">We got your message and will get back to you as soon as we can, usually within a day or two.</p>
+		<p class="max-w-2xl">In the meantime, feel free to check out our work or browse the site. We really appreciate you taking the time to get in touch!</p>
+		<div class="flex flex-col">
+			<MainButton buttonText="Back to home" href="/" />
+		</div>
+	</div>
+</Layout>

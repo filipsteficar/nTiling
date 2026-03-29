@@ -1,0 +1,14 @@
+---
+import { siteData, mainMenu } from "@/utils/global";
+import Logo from "@/images/svg/logo.svg";
+---
+<header class="gap-fl-base border-neutral-200 border-b">
+    <nav class="flex lg:flex-row flex-col flex-wrap justify-between items-center gap-fl-base mx-auto p-fl-base container">
+        <a href="/" class="w-auto h-10 font-extrabold"><Logo /></a>
+        <ul class="flex flex-row flex-wrap items-center gap-fl-base font-semibold text-fl-sm lg:text-fl-base">
+            {mainMenu?.map((item) => (
+            <li class="hover:text-neutral-950"><a href={item.href || "/"}>{item.label || "Unknown"}</a></li>
+            ))}
+        </ul>
+    </nav>
+</header>

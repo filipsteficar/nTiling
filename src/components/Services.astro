@@ -1,0 +1,32 @@
+---
+import { Image } from 'astro:assets';
+import NikolaHeroShot from "@/images/NikolaSteficar.webp";
+---
+<div id="services" class="gap-fl-base grid grid-cols-1 lg:grid-cols-2 my-fl-2xl">
+    <h2 class="text-fl-xl capitalize">Bring your vision to life with our professional services</h2>
+    <p>We will install any kind of porcelain and ceramic tiles, from kitchen backsplashes to custom showers. We also install other types of flooring, such as hardwood, laminate and LVP/LVT.</p>
+</div>
+<div class="gap-fl-sm grid grid-cols-1 lg:grid-cols-3 mt-fl-base">
+    <Image src={NikolaHeroShot} alt="Nikola from nTiling working" class="lg:col-span-1 rounded-2xl w-full h-full object-cover aspect-auto" />
+    <div class="gap-fl-sm grid grid-cols-1 lg:grid-cols-2 lg:col-span-2">
+        <div class="flex flex-col justify-between gap-fl-sm p-fl-base border border-neutral-200 rounded-2xl">
+            <h3 class="text-2xl capitalize">Hardwood flooring</h3>
+            <p>Hardwood flooring adds a warm, welcoming touch with its natural beauty and long-lasting durability.</p>
+        </div>
+
+        <div class="flex flex-col justify-between gap-fl-sm p-fl-base border border-neutral-200 rounded-2xl">
+            <h3 class="text-2xl capitalize">Tiling</h3>
+            <p>Tiles, especially porcelain, are scratch, stain, and chip resistant, ideal for homes with pets and kids.</p>
+        </div>
+
+        <div class="flex flex-col justify-between gap-fl-sm p-fl-base border border-neutral-200 rounded-2xl">
+            <h3 class="text-2xl capitalize">Vinyl flooring</h3>
+            <p>Vinyl flooring is affordable, durable for 10-20 years, moisture-resistant, and super easy to clean.</p>
+        </div>
+
+        <div class="flex flex-col justify-between gap-fl-sm p-fl-base border border-neutral-200 rounded-2xl">
+            <h3 class="text-2xl capitalize">Other work</h3>
+            <p>Our skilled team prepares and finishes your floors and walls, handling all your problems from top to bottom.</p>
+        </div>
+    </div>
+</div>

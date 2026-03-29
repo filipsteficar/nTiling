@@ -1,0 +1,27 @@
+---
+import { Image } from 'astro:assets';
+import HeroImage1 from "@/images/Hero1.webp";
+import HeroImage2 from "@/images/Hero2.webp";
+
+import MainButton from "@/components/MainButton.astro";
+import SecondaryButton from "@/components/SecondaryButton.astro";
+---
+<div class="gap-fl-base grid grid-cols-1 lg:grid-cols-2">
+    <!-- Text -->
+    <div class="flex flex-col justify-center gap-fl-base">
+        <div>
+            <p class="text-fl-sm capitalize">Best service in regina</p>
+            <h1 class="capitalize leading-tight">Tiling & flooring service to fit your dream home</h1>
+        </div>
+        <p>Our experienced professionals have been beautifying homes in Regina for years. High-quality workmanship and materials mean your floors will look amazing for years to come.</p>
+        <div class="flex flex-row items-center gap-fl-base">
+            <MainButton buttonText="Our services" href="/#our-services" />
+            <SecondaryButton buttonText="Contact us" href="/#contact" />
+        </div>
+    </div>
+    <!-- 2 Hero Images -->
+    <div class="gap-fl-base grid grid-cols-2 mt-fl-base mb-fl-base lg:mb-0">
+        <Image src={HeroImage1} alt="Shower Tiles" class="rounded-2xl object-cover aspect-9/16 -translate-y-fl-base" />
+        <Image src={HeroImage2} alt="Stairs" class="rounded-2xl object-cover aspect-9/16 translate-y-fl-base" />
+    </div>
+</div>
