@@ -7,6 +7,9 @@ import Footer from "@/components/Footer.astro";
 
 import SEO from "@/components/SEO.astro";
 
+import FaviconICO from "@/images/favicon/favicon.ico";
+import FaviconSVG from "@/images/favicon/favicon.svg";
+
 // Props
 const { pageTitle, pageDescription, currentURL, ogType, ogImage, ogImageAlt, articleAuthor, datePublished, dateModified } = Astro.props;
 ---
@@ -15,8 +18,8 @@ const { pageTitle, pageDescription, currentURL, ogType, ogImage, ogImageAlt, art
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
+		<link rel="icon" type="image/svg+xml" href={FaviconSVG.src} />
+		<link rel="icon" href={FaviconICO} />
 		<meta name="generator" content={Astro.generator} />
 		<!-- nTiling Sitemap -->
 		<link rel="sitemap" href="/sitemap-index.xml" />
